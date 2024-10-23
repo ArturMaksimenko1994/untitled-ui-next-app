@@ -14,6 +14,12 @@
     padding: 64px 0;
   }
 
+  &__logo {
+    display: block;
+    width: 142px;
+    object-fit: contain;
+  }
+
   &__bottom {
     padding: 32px 0 48px 0;
   }

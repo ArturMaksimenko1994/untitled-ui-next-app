@@ -1,30 +1,35 @@
 
 import styles from "./Header.module.scss";
 import Image from 'next/image'
-import Button from "@/ui-kit/buttons/Button/Button";
+import Button from "ui/buttons/Button/Button";
 import Link from "next/link";
 
 const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className="container xxl">
+      <div className="container container--xxl">
         <div className={styles.header__row}>
-
-          <Image src="/img/logo/Logo-dark.svg" alt="" />
-
+          <Link href="/">
+            <Image
+              className={styles.header__logo}
+              src="/img/logo/Logo-dark.svg"
+              alt="logo"
+              width={142}
+              height={32}
+            />
+          </Link>
           <nav className={styles.header__nav}>
-            <Link href="#footer">Home</Link>
-            <Link href="/">Products</Link>
-            <Link href="/">Resources</Link>
-            <Link href="/">Pricing</Link>
+            <Link href="/">Главная</Link>
+            <Link href="/dashboard">Профиль</Link>
+            <Link href="/blog">Блог</Link>
           </nav>
 
           <div className={styles.header__aut}>
             <Button
-              type="secondary-outline"
+              type="secondary"
               htmlElement="link"
-              link="register"
+              link="login"
               size="md"
             >
               Log in
@@ -33,7 +38,7 @@ const Header = () => {
             <Button
               type="primary"
               htmlElement="link"
-              link="about"
+              link="register"
               size="sm"
             >
               Sign up
