@@ -1,0 +1,44 @@
+@import '@/abstracts/variables';
+@import '@/abstracts/media-queries';
+
+.blog {
+  width: 100%;
+
+  &__header {
+    padding: 16px 0;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__data {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $brand-600;
+    margin-bottom: 12px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__picture {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 32px 0;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 16px 0;
+  }
+}

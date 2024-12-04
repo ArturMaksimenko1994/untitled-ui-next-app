@@ -1,7 +1,8 @@
-@import '@/abstracts/variables';
-@import '@/abstracts/media-queries';
-
-.h1 .h2 .h3 .h4 .h5 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
   color: $gray-900;
   font-weight: 500;
   line-height: 120%;
@@ -68,7 +69,7 @@
 }
 
 .text {
-  color: $gray-900;
+  color: $gray-600;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -90,6 +91,139 @@
 
     @include respond-to-mobile(lg) {
       font-size: 16px;
+    }
+  }
+
+  a {
+    color: $brand-600;
+  }
+}
+
+.gutenberg-content {
+  & *:first-child {
+    margin-top: 0;
+  }
+
+  & *:last-child {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    margin: 16px 0;
+    @extend .h1;
+  }
+
+  h2 {
+    margin: 16px 0;
+    @extend .h2;
+  }
+
+  h3 {
+    margin: 16px 0;
+    @extend .h3;
+  }
+
+  h4 {
+    margin: 16px 0;
+    @extend .h4;
+  }
+
+  h5 {
+    margin: 16px 0;
+    @extend .h5;
+  }
+
+  p {
+    margin: 16px 0;
+    @extend .text;
+  }
+
+  ol.wp-block-list {
+    counter-reset: num;
+    margin: 16px 0;
+
+    li {
+      @extend .text;
+
+      &:before {
+        content: counter(num) ".";
+        counter-increment: num;
+        color: $brand-600;
+        position: static;
+      }
+    }
+  }
+
+  ul.wp-block-list {
+    margin: 16px 0;
+
+    li {
+      position: relative;
+      padding-left: 12px;
+      @extend .text;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $brand-600;
+      }
+    }
+  }
+
+  pre.wp-block-code {
+    margin: 16px 0;
+    padding: 40px;
+    background-color: $gray-50;
+    border: 1px solid $gray-200;
+
+    code {
+      @extend .text;
+    }
+  }
+
+  blockquote.wp-block-quote {
+    margin: 48px 0;
+    padding: 8px 0 8px 22px;
+    border-left: 2px solid $brand-700;
+
+    p {
+      @extend .text;
+    }
+  }
+
+  figure.wp-block-table {
+    margin: 16px 0;
+
+    table {
+      background-color: #f9fafb;
+      border: 1px solid #e4e7ec;
+      width: 100%;
+
+      th,
+      td {
+        padding: 10px 14px;
+        @extend .text;
+      }
+    }
+  }
+
+  figure.wp-block-image {
+    margin: 48px 0;
+
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    figcaption {
+      margin-top: 16px;
+      @extend .text;
     }
   }
 }

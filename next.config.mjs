@@ -5,7 +5,7 @@ const nextConfig = {
   },
   sassOptions: {
     includePaths: ["./src/styles/abstracts"],
-    prependData: `@import "index.scss";`,
+    additionalData: `@import "index.scss";`,
   },
 };
 

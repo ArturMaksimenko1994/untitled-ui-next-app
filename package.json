@@ -9,9 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "@apollo/client": "^3.11.10",
+    "@vercel/postgres": "^0.10.0",
+    "autoprefixer": "^10.4.20",
+    "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6",
+    "next": "^15.0.3",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "resolve-url-loader": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -19,7 +27,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
-    "sass": "^1.79.4",
+    "sass": "^1.81.0",
     "typescript": "^5"
   }
 }

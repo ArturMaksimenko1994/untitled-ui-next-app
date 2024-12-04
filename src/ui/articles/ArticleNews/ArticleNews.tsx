@@ -6,11 +6,11 @@ interface IProps {
   link: string;
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   alt: string;
-  author: string;
+  author?: string;
   date: string;
-  tags: string[];
+  tags?: string[];
 }
 
 const ArticleNews = ({
@@ -23,13 +23,18 @@ const ArticleNews = ({
   date,
   tags,
 }: IProps) => {
+
+  const defaultImage = '/img/post/no-image.webp';
+
   return (
     <article className={styles.article}>
+      
       <Link className={styles.article__link} href={`${link}`} />
+
       <Image
         className={styles.article__picture}
-        src={`${imageSrc}`}
-        alt={`${alt}`}
+        src={imageSrc || defaultImage}
+        alt={alt}
         width={384}
         height={240}
       />
